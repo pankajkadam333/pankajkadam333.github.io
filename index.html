@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pankaj Kadam — Senior Full Stack Engineer</title>
+<meta name="description" content="Pankaj Kadam — Senior Full Stack Engineer with 12 years in .NET, Angular, SQL Server, Azure and AI-assisted engineering. Pune, India.">
+<link rel="icon" href="pk_img.jpg">
+<meta property="og:title" content="Pankaj Kadam — Senior Full Stack Engineer">
+<meta property="og:description" content="12 years building on .NET, Angular, SQL Server and Azure.">
+<meta property="og:image" content="pk_img.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --muted: #6b675f;
+    --line: #e6e1d8;
+    --accent: #c2410c;
+    --accent-soft: #fdeee4;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312;
+      --surface: #1d1c1a;
+      --ink: #f1ede6;
+      --muted: #a29d93;
+      --line: #2f2d2a;
+      --accent: #fb923c;
+      --accent-soft: #2b1d14;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+  .logo { font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 20px; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 22px; font-size: 14px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--ink); }
+  @media (max-width: 640px) { nav ul { display: none; } }
+
+  /* Hero */
+  .hero { padding: 72px 0 48px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .photo {
+    width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
+    border: 4px solid var(--surface);
+    box-shadow: 0 0 0 2px var(--accent), 0 18px 40px -18px rgba(0,0,0,.35);
+  }
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; }
+    .photo { width: 128px; height: 128px; order: -1; }
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 99px;
+    padding: 4px 12px; margin-bottom: 22px; background: var(--surface);
+  }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; display: inline-block; }
+  h1 {
+    font-family: Fraunces, Georgia, serif; font-weight: 700;
+    font-size: clamp(38px, 8vw, 64px); line-height: 1.05; letter-spacing: -0.02em;
+  }
+  .role { font-size: clamp(18px, 3vw, 22px); color: var(--muted); margin-top: 14px; }
+  .role b { color: var(--accent); font-weight: 600; }
+  .intro { max-width: 620px; margin-top: 22px; font-size: 17px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 500; font-size: 15px;
+    padding: 11px 20px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); transition: transform .15s, border-color .15s;
+  }
+  .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Stats */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; margin: 8px 0 24px;
+  }
+  .stat { background: var(--surface); padding: 20px 16px; }
+  .stat strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 30px; line-height: 1.1; color: var(--accent); }
+  .stat span { font-size: 13px; color: var(--muted); }
+  @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Sections */
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 5vw, 34px); font-weight: 700; margin: 6px 0 28px; letter-spacing: -0.01em; }
+
+  /* Experience timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .job { position: relative; margin-bottom: 36px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -28px; top: 7px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--line);
+  }
+  .job.current::before { border-color: var(--accent); background: var(--accent-soft); }
+  .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+  .job h3 { font-size: 18px; font-weight: 600; }
+  .job h3 em { font-style: normal; color: var(--muted); font-weight: 500; }
+  .when { font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .job p { margin-top: 6px; }
+  .job ul { margin: 10px 0 0 18px; }
+  .job li { margin-bottom: 4px; }
+  .job li::marker { color: var(--accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag { font-size: 12.5px; padding: 3px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--ink); }
+
+  details.older { margin-top: 36px; }
+  details.older summary {
+    cursor: pointer; list-style: none; font-weight: 500; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  details.older summary::-webkit-details-marker { display: none; }
+  details.older summary::after { content: "↓"; transition: transform .2s; }
+  details.older[open] summary::after { transform: rotate(180deg); }
+  details.older .timeline { margin-top: 28px; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; transition: border-color .2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card .ico { font-size: 22px; margin-bottom: 10px; display: block; }
+  .card h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 15px; }
+
+  /* Skills */
+  .skill-group { margin-bottom: 22px; }
+  .skill-group h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-size: 14px; padding: 6px 12px; border-radius: 8px;
+    background: var(--surface); border: 1px solid var(--line);
+  }
+  .chip.key { border-color: var(--accent); }
+
+  /* Education */
+  .edu { display: grid; gap: 14px; }
+  .edu-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+  .edu-row:last-child { border-bottom: 0; }
+  .edu-row b { font-weight: 600; }
+  .edu-row span { color: var(--muted); font-size: 15px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 72px 0 40px; }
+  .contact h2 { margin-bottom: 12px; }
+  .contact p { color: var(--muted); max-width: 480px; margin: 0 auto 28px; }
+  .contact .cta { justify-content: center; }
+  footer { text-align: center; font-size: 13px; color: var(--muted); padding: 24px 0 40px; }
+
+  /* Gentle reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">PK<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div>
+      <div class="badge"><i></i> SDE-3 at Entain (BetMGM) · Pune, India</div>
+      <h1>Pankaj Kadam</h1>
+      <p class="role">Senior Full Stack Engineer — <b>.NET · Angular · SQL Server · Azure · AI</b></p>
+      <p class="intro">
+        I build and ship web applications on the Microsoft stack — from database design to the
+        Angular front end — for regulated industries like betting, banking and insurance.
+        Twelve years in, I lead teams, own delivery end to end, and use agentic AI to ship faster.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:pankajkadam333@gmail.com">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/pankajkadam333" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/pankajkadam333" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      </div>
+      <img class="photo" src="pk_img.jpg" alt="Portrait of Pankaj Kadam" width="220" height="220">
+    </header>
+
+    <div class="stats reveal">
+      <div class="stat"><strong>12</strong><span>years building on .NET</span></div>
+      <div class="stat"><strong>Millions</strong><span>of users on products I ship</span></div>
+      <div class="stat"><strong>8</strong><span>engineers led per team</span></div>
+      <div class="stat"><strong>~30%</strong><span>less boilerplate with AI agents</span></div>
+    </div>
+
+    <!-- About / What I do -->
+    <section id="about">
+      <div class="eyebrow">What I do</div>
+      <h2>Full-stack delivery, start to finish</h2>
+      <div class="grid">
+        <div class="card reveal">
+          <span class="ico">⚙️</span>
+          <h3>Backend &amp; APIs</h3>
+          <p>C#, ASP.NET Core, Web API and SQL Server — clean schemas, tuned queries and services that hold up under real traffic.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">🖥️</span>
+          <h3>Modern front ends</h3>
+          <p>Angular (8 → 19) with TypeScript and RxJS, plus Blazor and React — fast, accessible, localized UIs.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">🛡️</span>
+          <h3>Regulated industries</h3>
+          <p>KYC, compliance and region-specific rules for betting, banking and insurance — shipped without production rollbacks.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">🤖</span>
+          <h3>AI-augmented engineering</h3>
+          <p>Agentic workflows with Claude Code, Kiro and Copilot for code generation, refactoring, tests and code review.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've worked</h2>
+
+      <div class="timeline">
+        <article class="job current reveal">
+          <div class="job-head">
+            <h3>SDE-3 <em>· Entain India (BetMGM)</em></h3>
+            <span class="when">Mar 2025 – Present</span>
+          </div>
+          <p>Building the Player Experience platform for BetMGM — online betting and casino for millions of users across the US, UK and Canada.</p>
+          <ul>
+            <li>Designed a conversational registration journey that raised sign-up completion and cut KYC drop-off.</li>
+            <li>Implemented KYC and compliance flows tailored to each regulator, state by state.</li>
+            <li>Own rollout planning — round-robin releases across labels to de-risk production.</li>
+          </ul>
+          <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular 17</span><span class="tag">Blazor</span><span class="tag">Azure</span><span class="tag">SQL Server</span><span class="tag">Kiro · Claude</span></div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-head">
+            <h3>Technical Lead <em>· Ness Digital Engineering</em></h3>
+            <span class="when">Jan 2022 – Mar 2025</span>
+          </div>
+          <p>Led the Advanced Distribution System — a platform that lets manufacturers publish product data to Amazon, eBay, London Drugs and other retailers.</p>
+          <ul>
+            <li>Grew from Full Stack Developer to Product Owner of the central ADS hub.</li>
+            <li>Led an 8-person cross-functional team from sprint planning to production.</li>
+            <li>Introduced Copilot / agent workflows — ~30% less boilerplate, better test coverage.</li>
+          </ul>
+          <div class="tags"><span class="tag">.NET Core</span><span class="tag">Angular 14</span><span class="tag">GraphQL</span><span class="tag">ELK</span><span class="tag">CI/CD</span></div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-head">
+            <h3>Tech Lead <em>· InfoVision Labs</em></h3>
+            <span class="when">Apr 2020 – Jan 2022</span>
+          </div>
+          <p>Delivered RedFlag, a mass-notification platform used by banks, malls and financial institutions for targeted email and SMS alerts. Owned localization for global clients.</p>
+          <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular 12</span><span class="tag">SQL Server</span></div>
+        </article>
+      </div>
+
+      <details class="older">
+        <summary>Show earlier roles (2014 – 2020)</summary>
+        <div class="timeline">
+          <article class="job">
+            <div class="job-head">
+              <h3>Team Lead <em>· L&amp;T Infotech</em></h3>
+              <span class="when">Nov 2018 – Apr 2020</span>
+            </div>
+            <p>Offshore lead for US insurance clients: led an 8-person team on the BB&amp;T online quoting system and delivered the MMC insurance purchase portal with integrated payments.</p>
+            <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular 8</span><span class="tag">EF</span></div>
+          </article>
+          <article class="job">
+            <div class="job-head">
+              <h3>Senior Software Engineer <em>· ISC Software (CoreCard)</em></h3>
+              <span class="when">Nov 2017 – Nov 2018</span>
+            </div>
+            <p>Built CoreMoney, a banking admin portal for debit, credit, gift and fleet cards.</p>
+            <div class="tags"><span class="tag">.NET MVC</span><span class="tag">Angular 4</span></div>
+          </article>
+          <article class="job">
+            <div class="job-head">
+              <h3>Senior Software Engineer <em>· Simple Logic</em></h3>
+              <span class="when">Apr 2015 – Nov 2017</span>
+            </div>
+            <p>Built a dynamic-forms CRM for Dena Bank and the i-Flow workflow platform for TransUnion and Bluestar.</p>
+            <div class="tags"><span class="tag">.NET MVC</span><span class="tag">WCF</span><span class="tag">SQL Server</span></div>
+          </article>
+          <article class="job">
+            <div class="job-head">
+              <h3>Software Engineer <em>· CyberEdge Web Solutions</em></h3>
+              <span class="when">Jan 2014 – Apr 2015</span>
+            </div>
+            <p>Sole developer of EvenSys, an inventory platform covering purchase and sales orders, approvals and stock.</p>
+            <div class="tags"><span class="tag">C# .NET</span><span class="tag">jQuery</span><span class="tag">Crystal Reports</span></div>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <div class="eyebrow">Highlights</div>
+      <h2>Things I'm proud of</h2>
+      <div class="grid">
+        <div class="card reveal">
+          <span class="ico">⚡</span>
+          <h3>A workflow system in under an hour</h3>
+          <p>Designed a configurable i-Flow engine that let a full client-specific workflow be set up in less than 60 minutes.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">✅</span>
+          <h3>Zero-rollback compliance releases</h3>
+          <p>Shipped KYC and gambling-regulation features at BetMGM across regulated markets without a single rollback.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">🧠</span>
+          <h3>Agents across the SDLC</h3>
+          <p>Built specialised agents and LLM tooling that cut boilerplate by ~30% and made tests and docs more consistent.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ico">🤝</span>
+          <h3>Trusted by clients</h3>
+          <p>Direct client appreciation for delivering on tight timelines — including projects where I learned the stack on the job.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="eyebrow">Toolkit</div>
+      <h2>Skills</h2>
+
+      <div class="skill-group reveal">
+        <h3>Core</h3>
+        <div class="chips">
+          <span class="chip key">C#</span><span class="chip key">ASP.NET Core 8</span><span class="chip key">Web API</span>
+          <span class="chip key">Angular 19</span><span class="chip key">TypeScript</span><span class="chip key">SQL Server</span>
+          <span class="chip key">Azure (AZ-900)</span><span class="chip">Entity Framework Core</span><span class="chip">LINQ</span>
+          <span class="chip">RxJS</span><span class="chip">Blazor</span><span class="chip">ASP.NET MVC</span><span class="chip">WebForms</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>AI-assisted development</h3>
+        <div class="chips">
+          <span class="chip key">Claude Code</span><span class="chip">Kiro (Sonnet &amp; Opus)</span><span class="chip">GitHub Copilot</span>
+          <span class="chip">Amazon Q</span><span class="chip">ChatGPT</span><span class="chip">Agentic workflows</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>Cloud, DevOps &amp; observability</h3>
+        <div class="chips">
+          <span class="chip">App Services</span><span class="chip">Azure Functions</span><span class="chip">Key Vault</span>
+          <span class="chip">Blob Storage</span><span class="chip">Application Insights</span><span class="chip">Azure DevOps</span>
+          <span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">ELK Stack</span><span class="chip">Prometheus</span><span class="chip">Grafana</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3>Also</h3>
+        <div class="chips">
+          <span class="chip">React</span><span class="chip">HTML5 / SCSS</span><span class="chip">Bootstrap</span><span class="chip">GraphQL</span>
+          <span class="chip">WCF</span><span class="chip">Power BI</span><span class="chip">RDLC</span><span class="chip">Agile / Scrum</span><span class="chip">JIRA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="eyebrow">Background</div>
+      <h2>Education &amp; certification</h2>
+      <div class="edu reveal">
+        <div class="edu-row"><b>Microsoft Certified: Azure Fundamentals (AZ-900)</b><span>Certification</span></div>
+        <div class="edu-row"><b>Master of Computer Applications (MCA)</b><span>MET's Institute of Engineering, Nashik · 2014</span></div>
+        <div class="edu-row"><b>Bachelor of Computer Applications (BCA)</b><span>ITM College, Nanded · 2011</span></div>
+        <div class="edu-row"><b>Languages</b><span>English · Hindi · Marathi</span></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's build something</h2>
+      <p>Open to senior full-stack and tech-lead roles in .NET and Angular. The quickest way to reach me is email.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:pankajkadam333@gmail.com">pankajkadam333@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/pankajkadam333" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/pankajkadam333" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr">2026</span> Pankaj Kadam · Pune, India</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Fade sections in as they scroll into view; show everything if the browser lacks support.
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
